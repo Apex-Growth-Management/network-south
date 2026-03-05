@@ -14,11 +14,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080c14]/95 backdrop-blur border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight">
-            <span className="text-blue-400">Network</span>
+            <span className="text-red-400">Network</span>
             <span className="text-white"> South</span>
             <span className="text-white/40 text-sm font-normal ml-1">Inc.</span>
           </span>
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/support"
-            className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full transition-colors"
+            className="bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full transition-colors"
           >
             Get a Quote
           </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#080c14] px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+        <div className="md:hidden border-t border-white/10 bg-[#0a0a0a] px-6 py-4 flex flex-col gap-4 text-sm font-medium">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors">
               {link.label}
@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link href="/payment" onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors">
             Payment
           </Link>
-          <Link href="/support" onClick={() => setOpen(false)} className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-center transition-colors">
+          <Link href="/support" onClick={() => setOpen(false)} className="bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full text-center transition-colors">
             Get a Quote
           </Link>
         </div>

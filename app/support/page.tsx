@@ -24,7 +24,7 @@ export default function Support() {
   }
 
   return (
-    <main className="bg-[#080c14] text-white pt-16">
+    <main className="bg-[#0a0a0a] text-white pt-16">
       {/* Hero */}
       <section className="relative py-24 px-6 overflow-hidden">
         <Image
@@ -33,9 +33,9 @@ export default function Support() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#080c14]/88" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/88" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Customer Support</p>
+          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Customer Support</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
             We&apos;re Here When You Need Us
           </h1>
@@ -79,13 +79,13 @@ export default function Support() {
               href={c.href}
               target={c.href.startsWith("https") ? "_blank" : undefined}
               rel={c.href.startsWith("https") ? "noopener noreferrer" : undefined}
-              className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 text-center hover:border-blue-500/40 hover:bg-blue-600/5 transition-all group"
+              className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 text-center hover:border-red-500/40 hover:bg-red-600/5 transition-all group"
             >
               <div className="text-4xl mb-4">{c.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{c.title}</h3>
-              <p className="text-blue-300 font-medium mb-1">{c.detail}</p>
+              <p className="text-red-300 font-medium mb-1">{c.detail}</p>
               <p className="text-white/40 text-sm mb-4">{c.sub}</p>
-              <span className="text-blue-400 group-hover:text-blue-300 text-sm font-medium transition-colors">{c.cta} →</span>
+              <span className="text-red-400 group-hover:text-red-300 text-sm font-medium transition-colors">{c.cta} →</span>
             </a>
           ))}
         </div>
@@ -95,7 +95,7 @@ export default function Support() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Get in Touch</p>
+            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Get in Touch</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Request a Free Consultation
             </h2>
@@ -104,19 +104,19 @@ export default function Support() {
             </p>
             <div className="space-y-4 text-sm text-white/50">
               <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5" />
+                <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5" />
                 <span>Free, no-obligation consultation</span>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5" />
+                <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5" />
                 <span>Expert recommendations for your industry</span>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5" />
+                <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5" />
                 <span>Response within one business day</span>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5" />
+                <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5" />
                 <span>Serving all of Raleigh-Durham and surrounding areas</span>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function Support() {
 
           <div>
             {submitted ? (
-              <div className="bg-blue-600/10 border border-blue-500/20 rounded-2xl p-12 text-center">
+              <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-12 text-center">
                 <div className="text-5xl mb-4">✅</div>
                 <h3 className="text-xl font-bold mb-2">Message Received!</h3>
                 <p className="text-white/50">Thank you for reaching out. One of our specialists will contact you within one business day.</p>
@@ -139,7 +139,7 @@ export default function Support() {
                       name="name"
                       value={form.name}
                       onChange={handleChange}
-                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-red-500/50 transition-colors"
                       placeholder="John Smith"
                     />
                   </div>
@@ -151,7 +151,7 @@ export default function Support() {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-red-500/50 transition-colors"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -163,7 +163,7 @@ export default function Support() {
                       name="phone"
                       value={form.phone}
                       onChange={handleChange}
-                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-red-500/50 transition-colors"
                       placeholder="(919) 555-0100"
                     />
                   </div>
@@ -174,7 +174,7 @@ export default function Support() {
                       name="company"
                       value={form.company}
                       onChange={handleChange}
-                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-red-500/50 transition-colors"
                       placeholder="Your Business"
                     />
                   </div>
@@ -185,18 +185,18 @@ export default function Support() {
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500/50 transition-colors"
+                    className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500/50 transition-colors"
                   >
-                    <option value="" className="bg-[#080c14]">Select a service...</option>
-                    <option value="voip" className="bg-[#080c14]">VoIP Cloud Phone Systems</option>
-                    <option value="ip-phone" className="bg-[#080c14]">IP Phone Systems (Premise)</option>
-                    <option value="network" className="bg-[#080c14]">Network Infrastructure</option>
-                    <option value="surveillance" className="bg-[#080c14]">Video Surveillance</option>
-                    <option value="access-control" className="bg-[#080c14]">Access Control</option>
-                    <option value="managed-it" className="bg-[#080c14]">Managed IT Services</option>
-                    <option value="cybersecurity" className="bg-[#080c14]">Cybersecurity</option>
-                    <option value="carrier" className="bg-[#080c14]">Carrier Services</option>
-                    <option value="other" className="bg-[#080c14]">Other / Not Sure</option>
+                    <option value="" className="bg-[#0a0a0a]">Select a service...</option>
+                    <option value="voip" className="bg-[#0a0a0a]">VoIP Cloud Phone Systems</option>
+                    <option value="ip-phone" className="bg-[#0a0a0a]">IP Phone Systems (Premise)</option>
+                    <option value="network" className="bg-[#0a0a0a]">Network Infrastructure</option>
+                    <option value="surveillance" className="bg-[#0a0a0a]">Video Surveillance</option>
+                    <option value="access-control" className="bg-[#0a0a0a]">Access Control</option>
+                    <option value="managed-it" className="bg-[#0a0a0a]">Managed IT Services</option>
+                    <option value="cybersecurity" className="bg-[#0a0a0a]">Cybersecurity</option>
+                    <option value="carrier" className="bg-[#0a0a0a]">Carrier Services</option>
+                    <option value="other" className="bg-[#0a0a0a]">Other / Not Sure</option>
                   </select>
                 </div>
                 <div>
@@ -206,13 +206,13 @@ export default function Support() {
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-blue-500/50 transition-colors resize-none"
+                    className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-red-500/50 transition-colors resize-none"
                     placeholder="Tell us about your current setup and what you're looking for..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 rounded-full transition-colors"
+                  className="w-full bg-red-600 hover:bg-red-500 text-white font-semibold py-4 rounded-full transition-colors"
                 >
                   Submit Request
                 </button>
@@ -228,7 +228,7 @@ export default function Support() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-blue-400 font-semibold">Network</span>
+            <span className="text-red-400 font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>

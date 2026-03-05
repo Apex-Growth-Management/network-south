@@ -55,7 +55,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <main className="bg-[#080c14] text-white pt-16">
+    <main className="bg-[#0a0a0a] text-white pt-16">
       {/* Hero */}
       <section className="relative py-28 px-6 overflow-hidden">
         <Image
@@ -64,9 +64,9 @@ export default function Industries() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#080c14]/85" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/85" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Industries</p>
+          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Industries</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
             Solutions Built for Your Industry
           </h1>
@@ -82,22 +82,22 @@ export default function Industries() {
           {industries.map((ind, i) => (
             <div
               key={ind.title}
-              className={`grid md:grid-cols-2 gap-10 items-center p-8 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-blue-500/30 transition-all ${
+              className={`grid md:grid-cols-2 gap-10 items-center p-8 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-red-500/30 transition-all ${
                 i % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
               <div>
                 <div className="text-4xl mb-4">{ind.icon}</div>
-                <h2 className="text-2xl font-bold mb-4 text-blue-300">{ind.title}</h2>
+                <h2 className="text-2xl font-bold mb-4 text-red-300">{ind.title}</h2>
                 <p className="text-white/60 leading-relaxed mb-6">{ind.description}</p>
-                <Link href="/support" className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+                <Link href="/support" className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors">
                   Learn more about {ind.title} solutions →
                 </Link>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {ind.features.map((f) => (
                   <div key={f} className="flex items-start gap-2 bg-white/[0.04] rounded-xl p-4">
-                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 shrink-0" />
+                    <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5 shrink-0" />
                     <span className="text-white/70 text-sm">{f}</span>
                   </div>
                 ))}
@@ -112,7 +112,7 @@ export default function Industries() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Don&apos;t See Your Industry?</h2>
           <p className="text-white/50 mb-8">We work with businesses of all types. Contact us for a custom consultation.</p>
-          <Link href="/support" className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-full transition-colors">
+          <Link href="/support" className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full transition-colors">
             Talk to a Specialist
           </Link>
         </div>
@@ -121,7 +121,7 @@ export default function Industries() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-blue-400 font-semibold">Network</span>
+            <span className="text-red-400 font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>

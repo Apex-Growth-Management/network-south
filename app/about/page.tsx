@@ -26,7 +26,7 @@ const process = [
 
 export default function About() {
   return (
-    <main className="bg-[#080c14] text-white pt-16">
+    <main className="bg-[#0a0a0a] text-white pt-16">
       {/* Hero */}
       <section className="relative py-28 px-6 overflow-hidden">
         <Image
@@ -35,9 +35,9 @@ export default function About() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#080c14]/85" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/85" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">About Us</p>
+          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">About Us</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
             Raleigh-Durham&apos;s Trusted Telecom Partner
           </h1>
@@ -51,7 +51,7 @@ export default function About() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Our Mission</p>
+            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Our Mission</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Seamlessly Integrating Communications Into Your Business
             </h2>
@@ -77,16 +77,16 @@ export default function About() {
       <section className="py-24 px-6 bg-white/[0.02] border-y border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Our Values</p>
+            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Our Values</p>
             <h2 className="text-3xl md:text-4xl font-bold">What Drives Us</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-blue-500/40 transition-all">
-                <div className="w-10 h-10 bg-blue-600/20 rounded-xl flex items-center justify-center mb-5">
-                  <div className="w-3 h-3 bg-blue-400 rounded-full" />
+              <div key={v.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-red-500/40 transition-all">
+                <div className="w-10 h-10 bg-red-600/20 rounded-xl flex items-center justify-center mb-5">
+                  <div className="w-3 h-3 bg-red-400 rounded-full" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-blue-300">{v.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-red-300">{v.title}</h3>
                 <p className="text-white/50 leading-relaxed">{v.desc}</p>
               </div>
             ))}
@@ -98,13 +98,13 @@ export default function About() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">How We Work</p>
+            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">How We Work</p>
             <h2 className="text-3xl md:text-4xl font-bold max-w-xl">A Proven Process From Start to Finish</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {process.map((p) => (
               <div key={p.step} className="border border-white/10 rounded-2xl p-6 bg-white/[0.02]">
-                <div className="text-3xl font-bold text-blue-400/30 mb-4">{p.step}</div>
+                <div className="text-3xl font-bold text-red-400/30 mb-4">{p.step}</div>
                 <h3 className="font-semibold mb-2">{p.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{p.desc}</p>
               </div>
@@ -122,7 +122,7 @@ export default function About() {
           </div>
           <Link
             href="/about/careers"
-            className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-full transition-colors whitespace-nowrap"
+            className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full transition-colors whitespace-nowrap"
           >
             View Open Positions
           </Link>
@@ -132,7 +132,7 @@ export default function About() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-blue-400 font-semibold">Network</span>
+            <span className="text-red-400 font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>
