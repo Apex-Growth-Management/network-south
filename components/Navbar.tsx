@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -16,12 +17,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight">
-            <span className="text-[#CC0000]">Network</span>
-            <span className="text-gray-900"> South</span>
-            <span className="text-gray-400 text-sm font-normal ml-1">Inc.</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="Network South Inc." width={130} height={44} style={{ objectFit: "contain" }} />
         </Link>
 
         {/* Desktop nav */}
