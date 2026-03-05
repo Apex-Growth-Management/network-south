@@ -14,40 +14,34 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight">
             <span className="text-[#CC0000]">Network</span>
-            <span className="text-white"> South</span>
-            <span className="text-white/40 text-sm font-normal ml-1">Inc.</span>
+            <span className="text-gray-900"> South</span>
+            <span className="text-gray-400 text-sm font-normal ml-1">Inc.</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-white/60 hover:text-white transition-colors">
+            <Link key={link.href} href={link.href} className="text-gray-600 hover:text-gray-900 transition-colors">
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/payment"
-            className="text-white/60 hover:text-white transition-colors"
-          >
+          <Link href="/payment" className="text-gray-600 hover:text-gray-900 transition-colors">
             Payment
           </Link>
-          <Link
-            href="/support"
-            className="bg-[#CC0000] hover:bg-[#b30000] text-white px-5 py-2 rounded-full transition-colors"
-          >
+          <Link href="/support" className="bg-[#CC0000] hover:bg-[#b30000] text-white px-5 py-2 rounded-full transition-colors">
             Get a Quote
           </Link>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-white/70 hover:text-white"
+          className="md:hidden text-gray-600 hover:text-gray-900"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -63,13 +57,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#0a0a0a] px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+        <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors">
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-gray-600 hover:text-gray-900 transition-colors">
               {link.label}
             </Link>
           ))}
-          <Link href="/payment" onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors">
+          <Link href="/payment" onClick={() => setOpen(false)} className="text-gray-600 hover:text-gray-900 transition-colors">
             Payment
           </Link>
           <Link href="/support" onClick={() => setOpen(false)} className="bg-[#CC0000] hover:bg-[#b30000] text-white px-5 py-2 rounded-full text-center transition-colors">
