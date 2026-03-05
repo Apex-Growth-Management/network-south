@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight">
-            <span className="text-red-400">Network</span>
+            <span className="text-[#CC0000]">Network</span>
             <span className="text-white"> South</span>
             <span className="text-white/40 text-sm font-normal ml-1">Inc.</span>
           </span>
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/support"
-            className="bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full transition-colors"
+            className="bg-[#CC0000] hover:bg-[#b30000] text-white px-5 py-2 rounded-full transition-colors"
           >
             Get a Quote
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link href="/payment" onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors">
             Payment
           </Link>
-          <Link href="/support" onClick={() => setOpen(false)} className="bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full text-center transition-colors">
+          <Link href="/support" onClick={() => setOpen(false)} className="bg-[#CC0000] hover:bg-[#b30000] text-white px-5 py-2 rounded-full text-center transition-colors">
             Get a Quote
           </Link>
         </div>

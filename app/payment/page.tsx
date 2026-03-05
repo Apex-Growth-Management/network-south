@@ -5,7 +5,7 @@ export default function Payment() {
     <main className="bg-[#0a0a0a] text-white pt-16">
       <section className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Make a Payment</p>
+          <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Make a Payment</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Secure Online Payment
           </h1>
@@ -22,14 +22,14 @@ export default function Payment() {
                 { icon: "📞", title: "Pay by Phone", desc: "Call us during business hours and we'll process your payment over the phone.", cta: "800.948.9914", href: "tel:8009489914" },
                 { icon: "✉️", title: "Mail a Check", desc: "Send a check payable to Network South, Inc. to our office address.", cta: "457 Park Ave, Youngsville, NC 27596", href: "#" },
               ].map((opt) => (
-                <div key={opt.title} className="flex items-start gap-5 p-5 border border-white/10 rounded-xl hover:border-red-500/30 transition-all">
+                <div key={opt.title} className="flex items-start gap-5 p-5 border border-white/10 rounded-xl hover:border-[#CC0000]/30 transition-all">
                   <div className="text-3xl">{opt.icon}</div>
                   <div className="flex-1">
                     <h3 className="font-semibold mb-1">{opt.title}</h3>
                     <p className="text-white/50 text-sm mb-3">{opt.desc}</p>
                     <a
                       href={opt.href}
-                      className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+                      className="text-[#CC0000] hover:text-[#ff4444] text-sm font-medium transition-colors"
                     >
                       {opt.cta} →
                     </a>
@@ -40,16 +40,16 @@ export default function Payment() {
           </div>
 
           {/* Billing info */}
-          <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-8 text-left">
-            <h3 className="font-semibold mb-3 text-red-300">Billing Questions?</h3>
+          <div className="bg-[#CC0000]/10 border border-[#CC0000]/20 rounded-2xl p-8 text-left">
+            <h3 className="font-semibold mb-3 text-[#ff4444]">Billing Questions?</h3>
             <p className="text-white/50 text-sm leading-relaxed mb-4">
               If you have questions about your invoice, want to set up auto-pay, or need to update your billing information, our team is happy to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:8009489914" className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors">
+              <a href="tel:8009489914" className="text-[#CC0000] hover:text-[#ff4444] text-sm font-medium transition-colors">
                 📞 800.948.9914
               </a>
-              <a href="tel:9198724771" className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors">
+              <a href="tel:9198724771" className="text-[#CC0000] hover:text-[#ff4444] text-sm font-medium transition-colors">
                 📞 (919) 872-4771
               </a>
             </div>
@@ -66,7 +66,7 @@ export default function Payment() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-red-400 font-semibold">Network</span>
+            <span className="text-[#CC0000] font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>

@@ -109,7 +109,7 @@ export default function Solutions() {
         />
         <div className="absolute inset-0 bg-[#0a0a0a]/85" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Solutions</p>
+          <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Solutions</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
             Technology That Works for Your Business
           </h1>
@@ -126,12 +126,12 @@ export default function Solutions() {
             <div key={cat.category}>
               <div className="flex items-center gap-4 mb-10">
                 <div className="h-px flex-1 bg-white/10" />
-                <span className="text-red-400 text-sm font-semibold tracking-widest uppercase">{cat.category}</span>
+                <span className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase">{cat.category}</span>
                 <div className="h-px flex-1 bg-white/10" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {cat.items.map((item) => (
-                  <div key={item.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-red-500/30 transition-all">
+                  <div key={item.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-[#CC0000]/30 transition-all">
                     <div className="text-3xl mb-4">{item.icon}</div>
                     <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                     <p
@@ -142,7 +142,7 @@ export default function Solutions() {
                       <div className="grid grid-cols-2 gap-2 mb-6">
                         {item.features.map((f) => (
                           <div key={f} className="flex items-center gap-2 text-xs text-white/50">
-                            <div className="w-1.5 h-1.5 bg-red-400 rounded-full shrink-0" />
+                            <div className="w-1.5 h-1.5 bg-[#CC0000] rounded-full shrink-0" />
                             {f}
                           </div>
                         ))}
@@ -174,7 +174,7 @@ export default function Solutions() {
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-white/50 mb-8">Talk to a solutions specialist and get a free consultation tailored to your business.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/support" className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full transition-colors">
+            <Link href="/support" className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded-full transition-colors">
               Schedule a Consultation
             </Link>
             <a href="tel:8009489914" className="border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-semibold px-8 py-4 rounded-full transition-colors">
@@ -187,7 +187,7 @@ export default function Solutions() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-red-400 font-semibold">Network</span>
+            <span className="text-[#CC0000] font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>

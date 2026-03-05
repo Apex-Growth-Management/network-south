@@ -5,10 +5,10 @@ export default function Careers() {
     <main className="bg-[#0a0a0a] text-white pt-16">
       <section className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <Link href="/about" className="text-red-400 hover:text-red-300 text-sm transition-colors mb-8 inline-block">
+          <Link href="/about" className="text-[#CC0000] hover:text-[#ff4444] text-sm transition-colors mb-8 inline-block">
             ← Back to About
           </Link>
-          <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Careers</p>
+          <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Careers</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
             Grow With Network South
           </h1>
@@ -23,8 +23,8 @@ export default function Careers() {
               { title: "Growth Opportunities", desc: "As the telecom and IT landscape evolves, so does your career. We invest in training and certification for our team." },
               { title: "Meaningful Work", desc: "Help real businesses stay connected and secure. Your work directly impacts companies across 7 industries." },
             ].map((item) => (
-              <div key={item.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 hover:border-red-500/40 transition-all">
-                <h3 className="font-semibold text-lg mb-3 text-red-300">{item.title}</h3>
+              <div key={item.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 hover:border-[#CC0000]/40 transition-all">
+                <h3 className="font-semibold text-lg mb-3 text-[#ff4444]">{item.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -54,7 +54,7 @@ export default function Careers() {
                   </div>
                   <Link
                     href="/support"
-                    className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors whitespace-nowrap"
+                    className="text-[#CC0000] hover:text-[#ff4444] text-sm font-medium transition-colors whitespace-nowrap"
                   >
                     Apply Now →
                   </Link>
@@ -64,12 +64,12 @@ export default function Careers() {
           </div>
 
           {/* CTA */}
-          <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-10 text-center">
+          <div className="bg-[#CC0000]/10 border border-[#CC0000]/20 rounded-2xl p-10 text-center">
             <h2 className="text-2xl font-bold mb-3">Don&apos;t See the Right Role?</h2>
             <p className="text-white/50 mb-6">Send us your resume and let us know how you can contribute to our team.</p>
             <a
               href="mailto:info@networksouth.com"
-              className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-3 rounded-full transition-colors"
+              className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Send Your Resume
             </a>
@@ -80,7 +80,7 @@ export default function Careers() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-red-400 font-semibold">Network</span>
+            <span className="text-[#CC0000] font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>

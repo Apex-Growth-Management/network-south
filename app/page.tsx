@@ -62,14 +62,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#0a0a0a]/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-transparent" />
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-            <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-[#CC0000]/20 border border-[#CC0000]/30 text-[#CC0000] text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+            <span className="w-2 h-2 bg-[#CC0000] rounded-full animate-pulse" />
             Serving Raleigh-Durham Since 1994
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl">
             Business Communications
             <br />
-            <span className="text-red-400">&amp; Security Solutions</span>
+            <span className="text-[#CC0000]">&amp; Security Solutions</span>
           </h1>
           <p className="text-lg md:text-xl text-white/60 max-w-2xl mb-10 leading-relaxed">
             Network South is Raleigh-Durham&apos;s foremost telecommunications partner — delivering VoIP, managed IT, network infrastructure, and security systems to businesses across the region.
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/support"
-              className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors"
+              className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors"
             >
               Get a Free Consultation
             </Link>
@@ -100,7 +100,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
-              <div className="text-3xl md:text-4xl font-bold text-red-400 mb-1">{s.value}</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#CC0000] mb-1">{s.value}</div>
               <div className="text-white/50 text-sm">{s.label}</div>
             </div>
           ))}
@@ -111,7 +111,7 @@ export default function Home() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">What We Do</p>
+            <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">What We Do</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 max-w-xl">
               Complete Telecom &amp; IT Solutions
             </h2>
@@ -123,16 +123,16 @@ export default function Home() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 hover:border-red-500/40 hover:bg-red-600/5 transition-all group"
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-[#CC0000]/5 transition-all group"
               >
                 <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-red-300 transition-colors">{s.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-[#ff4444] transition-colors">{s.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
           <div className="mt-12">
-            <Link href="/solutions" className="text-red-400 hover:text-red-300 font-medium transition-colors">
+            <Link href="/solutions" className="text-[#CC0000] hover:text-[#ff4444] font-medium transition-colors">
               View all solutions →
             </Link>
           </div>
@@ -151,7 +151,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Why Network South</p>
+              <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Why Network South</p>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Your Local Telecom Partner
               </h2>
@@ -161,7 +161,7 @@ export default function Home() {
               <p className="text-white/60 leading-relaxed mb-8">
                 Every client gets on-site training after installation, 24/7 on-call support, and access to best-in-class products from the industry&apos;s top manufacturers.
               </p>
-              <Link href="/about" className="text-red-400 hover:text-red-300 font-medium transition-colors">
+              <Link href="/about" className="text-[#CC0000] hover:text-[#ff4444] font-medium transition-colors">
                 Learn about our story →
               </Link>
             </div>
@@ -173,7 +173,7 @@ export default function Home() {
                 { title: "Award-Winning Service", desc: "Recognized for customer satisfaction and technical excellence across the Raleigh-Durham region." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 bg-white/[0.04] border border-white/10 rounded-xl p-5">
-                  <div className="w-2 h-2 bg-red-400 rounded-full mt-2 shrink-0" />
+                  <div className="w-2 h-2 bg-[#CC0000] rounded-full mt-2 shrink-0" />
                   <div>
                     <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
                     <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
@@ -189,7 +189,7 @@ export default function Home() {
       <section className="py-24 px-6 bg-white/[0.01]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-red-400 text-sm font-semibold tracking-widest uppercase mb-3">Industries We Serve</p>
+            <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Industries We Serve</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Built for Your Industry</h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
               We understand the unique communication needs of businesses across every sector.
@@ -208,7 +208,7 @@ export default function Home() {
               <Link
                 key={ind.label}
                 href="/industries"
-                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-red-500/40 hover:bg-red-600/5 transition-all"
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-[#CC0000]/40 hover:bg-[#CC0000]/5 transition-all"
               >
                 <div className="text-3xl mb-3">{ind.icon}</div>
                 <div className="text-sm font-medium text-white/70">{ind.label}</div>
@@ -216,7 +216,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/industries" className="text-red-400 hover:text-red-300 font-medium transition-colors">
+            <Link href="/industries" className="text-[#CC0000] hover:text-[#ff4444] font-medium transition-colors">
               See industry solutions →
             </Link>
           </div>
@@ -249,7 +249,7 @@ export default function Home() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Ready to upgrade your <br />
-            <span className="text-red-400">business communications?</span>
+            <span className="text-[#CC0000]">business communications?</span>
           </h2>
           <p className="text-white/50 text-lg mb-10">
             Get a free consultation with one of our telecom specialists. No pressure — just expert advice tailored to your business.
@@ -257,7 +257,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/support"
-              className="bg-red-600 hover:bg-red-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
+              className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
             >
               Schedule a Consultation
             </Link>
@@ -274,7 +274,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-sm">
           <div>
-            <span className="text-red-400 font-semibold">Network</span>
+            <span className="text-[#CC0000] font-semibold">Network</span>
             <span className="text-white/50"> South, Inc.</span>
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>
