@@ -1,20 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Phone, Shield, Globe, Camera, Monitor, KeyRound, Car, HeartPulse, Truck, Briefcase, Scale, GraduationCap, Cpu } from "lucide-react";
 
 const services = [
-  { icon: "📞", title: "VoIP Phone Systems", description: "Cloud-based and premise phone systems from leading providers — RingCentral, Mitel, Nextiva, 8×8, and more." },
-  { icon: "🔒", title: "Cybersecurity", description: "Protect your business with enterprise-grade security solutions, firewalls, and threat monitoring." },
-  { icon: "🌐", title: "Network Infrastructure", description: "Cabling, fiber, WAN, Wi-Fi, and LAN design and installation built for reliability and performance." },
-  { icon: "📷", title: "Video Surveillance", description: "Commercial surveillance systems that keep your people, property, and assets protected around the clock." },
-  { icon: "💻", title: "Managed IT Services", description: "Proactive IT management so you can focus on your business — not your technology." },
-  { icon: "🔑", title: "Access Control", description: "Manage who enters your facility with modern, scalable access control solutions." },
+  { Icon: Phone, title: "VoIP Phone Systems", description: "Cloud-based and premise phone systems from leading providers — RingCentral, Mitel, Nextiva, 8×8, and more." },
+  { Icon: Shield, title: "Cybersecurity", description: "Protect your business with enterprise-grade security solutions, firewalls, and threat monitoring." },
+  { Icon: Globe, title: "Network Infrastructure", description: "Cabling, fiber, WAN, Wi-Fi, and LAN design and installation built for reliability and performance." },
+  { Icon: Camera, title: "Video Surveillance", description: "Commercial surveillance systems that keep your people, property, and assets protected around the clock." },
+  { Icon: Monitor, title: "Managed IT Services", description: "Proactive IT management so you can focus on your business — not your technology." },
+  { Icon: KeyRound, title: "Access Control", description: "Manage who enters your facility with modern, scalable access control solutions." },
 ];
+
 const stats = [
   { value: "30+", label: "Years in Business" },
   { value: "7", label: "Industries Served" },
   { value: "24/7", label: "On-Call Support" },
   { value: "20+", label: "Technology Partners" },
 ];
+
+const industries = [
+  { Icon: Car, label: "Automotive" },
+  { Icon: HeartPulse, label: "Healthcare" },
+  { Icon: Truck, label: "Transportation" },
+  { Icon: Briefcase, label: "Professional" },
+  { Icon: Scale, label: "Legal" },
+  { Icon: GraduationCap, label: "Education" },
+  { Icon: Cpu, label: "Technology" },
+];
+
 const partners = ["8×8","Aruba","AT&T","Cisco","Comcast","Dell","Five9","HP","Microsoft","Mitel","Nextiva","RingCentral","SonicWall","Spectrum","Ubiquiti","VMware"];
 
 export default function Home() {
@@ -22,9 +35,9 @@ export default function Home() {
     <main className="bg-white text-gray-900">
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80&fit=crop" alt="Network infrastructure" fill className="object-cover object-center" priority />
-        <div className="absolute inset-0 bg-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent" />
+        <Image src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=80&fit=crop" alt="Modern office" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="max-w-7xl mx-auto w-full relative z-10 text-white">
           <div className="inline-flex items-center gap-2 bg-[#CC0000]/20 border border-[#CC0000]/30 text-red-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
@@ -34,14 +47,14 @@ export default function Home() {
             Business Communications<br />
             <span className="text-[#CC0000]">&amp; Security Solutions</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
             Network South is Raleigh-Durham&apos;s foremost telecommunications partner — delivering VoIP, managed IT, network infrastructure, and security systems to businesses across the region.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/support" className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">Get a Free Consultation</Link>
-            <Link href="/solutions" className="border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">Explore Solutions</Link>
+            <Link href="/solutions" className="border border-white/40 hover:border-white/70 text-white/90 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">Explore Solutions</Link>
           </div>
-          <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/50">
+          <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/60">
             <span>📞 800.948.9914</span>
             <span>📍 457 Park Ave, Youngsville, NC</span>
           </div>
@@ -69,11 +82,13 @@ export default function Home() {
             <p className="text-gray-500 text-lg max-w-2xl">From your phone system to your network backbone — we design, install, and support the technology your business runs on.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <div key={s.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-red-50 transition-all group">
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-[#CC0000] transition-colors">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.description}</p>
+            {services.map(({ Icon, title, description }) => (
+              <div key={title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-red-50 transition-all group">
+                <div className="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-5 group-hover:border-[#CC0000]/30 group-hover:bg-red-50 transition-all">
+                  <Icon className="w-5 h-5 text-[#CC0000]" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-[#CC0000] transition-colors">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -125,18 +140,12 @@ export default function Home() {
             <p className="text-gray-500 text-lg max-w-xl mx-auto">We understand the unique communication needs of businesses across every sector.</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-            {[
-              { icon: "🚗", label: "Automotive" },
-              { icon: "🏥", label: "Healthcare" },
-              { icon: "🚛", label: "Transportation" },
-              { icon: "💼", label: "Professional" },
-              { icon: "⚖️", label: "Legal" },
-              { icon: "🎓", label: "Education" },
-              { icon: "💡", label: "Technology" },
-            ].map((ind) => (
-              <Link key={ind.label} href="/industries" className="bg-white border border-gray-200 rounded-2xl p-6 text-center hover:border-[#CC0000]/40 hover:bg-red-50 transition-all">
-                <div className="text-3xl mb-3">{ind.icon}</div>
-                <div className="text-sm font-medium text-gray-700">{ind.label}</div>
+            {industries.map(({ Icon, label }) => (
+              <Link key={label} href="/industries" className="bg-white border border-gray-200 rounded-2xl p-6 text-center hover:border-[#CC0000]/40 hover:bg-red-50 transition-all group">
+                <div className="flex justify-center mb-3">
+                  <Icon className="w-7 h-7 text-gray-400 group-hover:text-[#CC0000] transition-colors" />
+                </div>
+                <div className="text-sm font-medium text-gray-700">{label}</div>
               </Link>
             ))}
           </div>
