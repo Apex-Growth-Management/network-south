@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Shield, Globe, Camera, Monitor, KeyRound, Car, HeartPulse, Truck, Briefcase, Scale, GraduationCap, Cpu } from "lucide-react";
+import { Phone, Shield, Globe, Camera, Monitor, KeyRound, Car, HeartPulse, Truck, Briefcase, Scale, GraduationCap, Cpu, MapPin } from "lucide-react";
 
 const services = [
   { Icon: Phone, title: "VoIP Phone Systems", description: "Cloud-based and premise phone systems from leading providers — RingCentral, Mitel, Nextiva, 8×8, and more." },
@@ -55,8 +55,8 @@ export default function Home() {
             <Link href="/solutions" className="border border-white/40 hover:border-white/70 text-white/90 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">Explore Solutions</Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/60">
-            <span>📞 800.948.9914</span>
-            <span>📍 457 Park Ave, Youngsville, NC</span>
+            <span className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> 800.948.9914</span>
+            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 shrink-0" /> 457 Park Ave, Youngsville, NC</span>
           </div>
         </div>
       </section>
