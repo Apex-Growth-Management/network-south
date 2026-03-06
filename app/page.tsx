@@ -1,22 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Shield, Globe, Camera, Monitor, KeyRound, Car, HeartPulse, Truck, Briefcase, Scale, GraduationCap, Cpu, MapPin } from "lucide-react";
+import { sanityFetch } from "@/sanity/lib/live";
 
-const services = [
-  { Icon: Phone, title: "VoIP Phone Systems", description: "Cloud-based and premise phone systems from leading providers — RingCentral, Mitel, Nextiva, 8×8, and more." },
-  { Icon: Shield, title: "Cybersecurity", description: "Protect your business with enterprise-grade security solutions, firewalls, and threat monitoring." },
-  { Icon: Globe, title: "Network Infrastructure", description: "Cabling, fiber, WAN, Wi-Fi, and LAN design and installation built for reliability and performance." },
-  { Icon: Camera, title: "Video Surveillance", description: "Commercial surveillance systems that keep your people, property, and assets protected around the clock." },
-  { Icon: Monitor, title: "Managed IT Services", description: "Proactive IT management so you can focus on your business — not your technology." },
-  { Icon: KeyRound, title: "Access Control", description: "Manage who enters your facility with modern, scalable access control solutions." },
+const serviceIcons = [Phone, Shield, Globe, Camera, Monitor, KeyRound];
+
+const defaultServices = [
+  { title: "VoIP Phone Systems", description: "Cloud-based and premise phone systems from leading providers — RingCentral, Mitel, Nextiva, 8×8, and more." },
+  { title: "Cybersecurity", description: "Protect your business with enterprise-grade security solutions, firewalls, and threat monitoring." },
+  { title: "Network Infrastructure", description: "Cabling, fiber, WAN, Wi-Fi, and LAN design and installation built for reliability and performance." },
+  { title: "Video Surveillance", description: "Commercial surveillance systems that keep your people, property, and assets protected around the clock." },
+  { title: "Managed IT Services", description: "Proactive IT management so you can focus on your business — not your technology." },
+  { title: "Access Control", description: "Manage who enters your facility with modern, scalable access control solutions." },
 ];
 
-const stats = [
+const defaultStats = [
   { value: "30+", label: "Years in Business" },
   { value: "7", label: "Industries Served" },
   { value: "24/7", label: "On-Call Support" },
   { value: "20+", label: "Technology Partners" },
 ];
+
+const defaultPartners = ["8×8","Aruba","AT&T","Cisco","Comcast","Dell","Five9","HP","Microsoft","Mitel","Nextiva","RingCentral","SonicWall","Spectrum","Ubiquiti","VMware"];
 
 const industries = [
   { Icon: Car, label: "Automotive" },
@@ -28,9 +33,24 @@ const industries = [
   { Icon: Cpu, label: "Technology" },
 ];
 
-const partners = ["8×8","Aruba","AT&T","Cisco","Comcast","Dell","Five9","HP","Microsoft","Mitel","Nextiva","RingCentral","SonicWall","Spectrum","Ubiquiti","VMware"];
+export default async function Home() {
+  const [{ data: settings }, { data: sanityServices }, { data: sanityStats }, { data: sanityPartners }] = await Promise.all([
+    sanityFetch({ query: `*[_type == "siteSettings" && _id == "siteSettings"][0]` }),
+    sanityFetch({ query: `*[_type == "service"] | order(order asc)` }),
+    sanityFetch({ query: `*[_type == "stat"] | order(order asc)` }),
+    sanityFetch({ query: `*[_type == "partner"] | order(order asc)` }),
+  ]);
 
-export default function Home() {
+  const badge = settings?.badgeText || "Serving Raleigh-Durham Since 1994";
+  const heroTitle = settings?.heroTitle || "Business Communications";
+  const heroSubtitle = settings?.heroSubtitle || "& Security Solutions";
+  const phone = settings?.phone || "800.948.9914";
+  const address = settings?.address || "457 Park Ave, Youngsville, NC";
+
+  const services = sanityServices?.length ? sanityServices : defaultServices;
+  const stats = sanityStats?.length ? sanityStats : defaultStats;
+  const partners = sanityPartners?.length ? sanityPartners.map((p: { name: string }) => p.name) : defaultPartners;
+
   return (
     <main className="bg-white text-gray-900">
       {/* Hero */}
@@ -41,11 +61,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full relative z-10 text-white">
           <div className="inline-flex items-center gap-2 bg-[#CC0000]/20 border border-[#CC0000]/30 text-red-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-            Serving Raleigh-Durham Since 1994
+            {badge}
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl">
-            Business Communications<br />
-            <span className="text-[#CC0000]">&amp; Security Solutions</span>
+            {heroTitle}<br />
+            <span className="text-[#CC0000]">{heroSubtitle}</span>
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
             Network South is Raleigh-Durham&apos;s foremost telecommunications partner — delivering VoIP, managed IT, network infrastructure, and security systems to businesses across the region.
@@ -55,8 +75,8 @@ export default function Home() {
             <Link href="/solutions" className="border border-white/40 hover:border-white/70 text-white/90 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">Explore Solutions</Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/60">
-            <span className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> 800.948.9914</span>
-            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 shrink-0" /> 457 Park Ave, Youngsville, NC</span>
+            <span className="flex items-center gap-2"><Phone className="w-4 h-4 shrink-0" /> {phone}</span>
+            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 shrink-0" /> {address}</span>
           </div>
         </div>
       </section>
@@ -64,7 +84,7 @@ export default function Home() {
       {/* Stats */}
       <section className="py-16 px-6 border-y border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {stats.map((s) => (
+          {stats.map((s: { value: string; label: string }) => (
             <div key={s.label}>
               <div className="text-3xl md:text-4xl font-bold text-[#CC0000] mb-1">{s.value}</div>
               <div className="text-gray-500 text-sm">{s.label}</div>
@@ -82,15 +102,18 @@ export default function Home() {
             <p className="text-gray-500 text-lg max-w-2xl">From your phone system to your network backbone — we design, install, and support the technology your business runs on.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ Icon, title, description }) => (
-              <div key={title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-red-50 transition-all group">
-                <div className="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-5 group-hover:border-[#CC0000]/30 group-hover:bg-red-50 transition-all">
-                  <Icon className="w-5 h-5 text-[#CC0000]" />
+            {services.map((svc: { title: string; description: string }, i: number) => {
+              const Icon = serviceIcons[i % serviceIcons.length];
+              return (
+                <div key={svc.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-red-50 transition-all group">
+                  <div className="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-5 group-hover:border-[#CC0000]/30 group-hover:bg-red-50 transition-all">
+                    <Icon className="w-5 h-5 text-[#CC0000]" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-[#CC0000] transition-colors">{svc.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{svc.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-[#CC0000] transition-colors">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="mt-12">
             <Link href="/solutions" className="text-[#CC0000] hover:text-[#b30000] font-medium transition-colors">View all solutions →</Link>
@@ -160,7 +183,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-gray-400 text-sm font-medium tracking-widest uppercase mb-10">Trusted Technology Partners</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
-            {partners.map((p) => (
+            {partners.map((p: string) => (
               <span key={p} className="text-gray-400 hover:text-gray-600 text-sm font-medium transition-colors cursor-default">{p}</span>
             ))}
           </div>
@@ -179,7 +202,7 @@ export default function Home() {
           <p className="text-white/60 text-lg mb-10">Get a free consultation with one of our telecom specialists. No pressure — just expert advice tailored to your business.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/support" className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors">Schedule a Consultation</Link>
-            <a href="tel:8009489914" className="border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors">Call 800.948.9914</a>
+            <a href={`tel:${phone.replace(/\D/g, '')}`} className="border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors">Call {phone}</a>
           </div>
         </div>
       </section>
@@ -192,8 +215,8 @@ export default function Home() {
             <span className="ml-3">© {new Date().getFullYear()} All rights reserved.</span>
           </div>
           <div className="flex gap-6">
-            <span>457 Park Ave, Youngsville, NC 27596</span>
-            <a href="tel:8009489914" className="hover:text-gray-600 transition-colors">800.948.9914</a>
+            <span>{address}</span>
+            <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:text-gray-600 transition-colors">{phone}</a>
           </div>
           <div className="flex gap-6">
             <Link href="/support" className="hover:text-gray-600 transition-colors">Support</Link>
