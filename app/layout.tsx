@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ScrollProgress from "@/components/ScrollProgress";
 import { SanityLive } from "@/sanity/lib/live";
 
 const inter = Inter({
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
+        <ScrollProgress />
         <Navbar />
         {children}
         <SanityLive />
