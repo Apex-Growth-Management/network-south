@@ -6,7 +6,6 @@ import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
 import StickyCTA from "@/components/StickyCTA";
-import CustomCursor from "@/components/CustomCursor";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { SanityLive } from "@/sanity/lib/live";
 
@@ -37,7 +36,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
         <LocalBusinessSchema />
-        <CustomCursor />
         <SmoothScroll>
           <ScrollProgress />
           <Navbar />
