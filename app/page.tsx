@@ -9,6 +9,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CounterStats from "@/components/CounterStat";
 import MarqueeLogos from "@/components/MarqueeLogos";
 import Footer from "@/components/Footer";
+import TiltCard from "@/components/TiltCard";
+import MagneticButton from "@/components/MagneticButton";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import ScrambleText from "@/components/ScrambleText";
+import ScrollRevealText from "@/components/ScrollRevealText";
 
 const serviceIcons = [Phone, Shield, Globe, Camera, Monitor, KeyRound];
 
@@ -99,18 +104,22 @@ export default async function Home() {
           </p>
 
           <div className="hero-btns flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/support"
-              className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-900/30"
-            >
-              Get a Free Consultation
-            </Link>
-            <Link
-              href="/solutions"
-              className="border border-white/40 hover:border-white/80 hover:bg-white/10 text-white/90 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200"
-            >
-              Explore Solutions
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/support"
+                className="inline-block bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-900/30"
+              >
+                Get a Free Consultation
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <Link
+                href="/solutions"
+                className="inline-block border border-white/40 hover:border-white/80 hover:bg-white/10 text-white/90 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200"
+              >
+                Explore Solutions
+              </Link>
+            </MagneticButton>
           </div>
 
           <div className="hero-meta mt-10 flex flex-wrap gap-6 text-sm text-white/50">
@@ -139,7 +148,7 @@ export default async function Home() {
           <AnimatedSection>
             <div className="mb-16">
               <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">What We Do</p>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 max-w-xl">Complete Telecom &amp; IT Solutions</h2>
+              <AnimatedHeading text="Complete Telecom & IT Solutions" className="text-3xl md:text-5xl font-bold mb-4 max-w-xl" />
               <p className="text-gray-500 text-lg max-w-2xl">From your phone system to your network backbone — we design, install, and support the technology your business runs on.</p>
             </div>
           </AnimatedSection>
@@ -149,6 +158,7 @@ export default async function Home() {
               const Icon = serviceIcons[i % serviceIcons.length];
               return (
                 <AnimatedSection key={svc.title} delay={i * 80}>
+                  <TiltCard intensity={8}>
                   <div className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#CC0000]/40 hover:bg-red-50/60 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-red-900/5 transition-all duration-300 group h-full cursor-default">
                     <div className="w-11 h-11 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-5 group-hover:border-[#CC0000]/30 group-hover:bg-red-50 transition-all duration-300 shadow-sm">
                       <Icon className="w-5 h-5 text-[#CC0000]" />
@@ -156,6 +166,7 @@ export default async function Home() {
                     <h3 className="text-base font-semibold mb-2 group-hover:text-[#CC0000] transition-colors duration-200">{svc.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{svc.description}</p>
                   </div>
+                  </TiltCard>
                 </AnimatedSection>
               );
             })}
@@ -187,8 +198,8 @@ export default async function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="anim-slide-left">
               <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Why Network South</p>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Your Local Telecom Partner</h2>
-              <p className="text-white/70 leading-relaxed mb-6">For over 30 years, we&apos;ve been helping businesses across Raleigh-Durham stay connected and secure. We don&apos;t just sell technology — we integrate, support, and grow with you.</p>
+              <AnimatedHeading text="Your Local Telecom Partner" className="text-3xl md:text-5xl font-bold mb-6 text-white" />
+              <ScrollRevealText text="For over 30 years, we've been helping businesses across Raleigh-Durham stay connected and secure. We don't just sell technology — we integrate, support, and grow with you." className="text-white/70 leading-relaxed mb-6" />
               <p className="text-white/70 leading-relaxed mb-8">Every client gets on-site training after installation, 24/7 on-call support, and access to best-in-class products from the industry&apos;s top manufacturers.</p>
               <Link href="/about" className="text-[#CC0000] hover:text-red-400 font-medium transition-colors inline-flex items-center gap-1.5 group">
                 Learn about our story
@@ -218,7 +229,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-[#CC0000] text-sm font-semibold tracking-widest uppercase mb-3">Industries We Serve</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Built for Your Industry</h2>
+            <AnimatedHeading text="Built for Your Industry" className="text-3xl md:text-5xl font-bold mb-4" />
             <p className="text-gray-500 text-lg max-w-xl mx-auto">We understand the unique communication needs of businesses across every sector.</p>
           </AnimatedSection>
 
@@ -268,25 +279,29 @@ export default async function Home() {
 
         <AnimatedSection className="relative z-10 max-w-3xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Ready to upgrade your <br />
+            <ScrambleText text="Ready to upgrade your" className="text-white" /><br />
             <span className="text-[#CC0000]">business communications?</span>
           </h2>
           <p className="text-white/60 text-lg mb-10">
             Get a free consultation with one of our telecom specialists. No pressure — just expert advice tailored to your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/support"
-              className="bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-900/30"
-            >
-              Schedule a Consultation
-            </Link>
-            <a
-              href={`tel:${phone.replace(/\D/g, "")}`}
-              className="border border-white/30 hover:border-white/60 hover:bg-white/10 text-white/80 hover:text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-200"
-            >
-              Call {phone}
-            </a>
+            <MagneticButton>
+              <Link
+                href="/support"
+                className="inline-block bg-[#CC0000] hover:bg-[#b30000] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-900/30"
+              >
+                Schedule a Consultation
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <a
+                href={`tel:${phone.replace(/\D/g, "")}`}
+                className="inline-block border border-white/30 hover:border-white/60 hover:bg-white/10 text-white/80 hover:text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-200"
+              >
+                Call {phone}
+              </a>
+            </MagneticButton>
           </div>
         </AnimatedSection>
       </section>
