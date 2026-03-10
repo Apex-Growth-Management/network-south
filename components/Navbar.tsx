@@ -56,18 +56,16 @@ export default function Navbar() {
           ))}
           <Link
             href="/payment"
-            className={`transition-colors duration-300 ${
-              scrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+            className={`transition-colors duration-300 font-semibold ${
+              scrolled ? "text-[#CC0000] hover:text-[#b30000]" : "text-red-300 hover:text-red-200"
             }`}
           >
             Payment
           </Link>
           <Link
             href="/audit"
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-              scrolled
-                ? "border border-[#CC0000] text-[#CC0000] hover:bg-[#CC0000] hover:text-white"
-                : "border border-white/50 text-white/90 hover:border-white hover:text-white"
+            className={`transition-colors duration-300 font-semibold ${
+              scrolled ? "text-[#CC0000] hover:text-[#b30000]" : "text-red-300 hover:text-red-200"
             }`}
           >
             Free Assessment
@@ -115,10 +113,10 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/payment" onClick={() => setOpen(false)} className="text-gray-600 hover:text-gray-900 transition-colors">
+          <Link href="/payment" onClick={() => setOpen(false)} className="text-[#CC0000] font-semibold hover:text-[#b30000] transition-colors">
             Payment
           </Link>
-          <Link href="/audit" onClick={() => setOpen(false)} className="border border-[#CC0000] text-[#CC0000] px-5 py-2 rounded-full text-center transition-colors hover:bg-[#CC0000] hover:text-white">
+          <Link href="/audit" onClick={() => setOpen(false)} className="text-[#CC0000] font-semibold hover:text-[#b30000] transition-colors">
             Free Assessment
           </Link>
           <Link
