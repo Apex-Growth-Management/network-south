@@ -6,6 +6,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
 import StickyCTA from "@/components/StickyCTA";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { SanityLive } from "@/sanity/lib/live";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
+        <LocalBusinessSchema />
         <SmoothScroll>
           <ScrollProgress />
           <Navbar />
