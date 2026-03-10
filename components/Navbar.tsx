@@ -10,6 +10,8 @@ const navLinks = [
   { label: "Support", href: "/support" },
 ];
 
+const auditLink = { label: "Free Assessment", href: "/audit" };
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -54,6 +56,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href={auditLink.href}
+            className={`transition-colors duration-300 font-semibold ${
+              scrolled ? "text-[#CC0000] hover:text-[#b30000]" : "text-red-300 hover:text-red-200"
+            }`}
+          >
+            {auditLink.label}
+          </Link>
           <Link
             href="/payment"
             className={`transition-colors duration-300 ${
@@ -105,6 +115,9 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link href={auditLink.href} onClick={() => setOpen(false)} className="text-[#CC0000] font-semibold hover:text-[#b30000] transition-colors">
+            {auditLink.label}
+          </Link>
           <Link href="/payment" onClick={() => setOpen(false)} className="text-gray-600 hover:text-gray-900 transition-colors">
             Payment
           </Link>

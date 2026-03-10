@@ -8,6 +8,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import AnimatedSection from "@/components/AnimatedSection";
 import CounterStats from "@/components/CounterStat";
 import MarqueeLogos from "@/components/MarqueeLogos";
+import Footer from "@/components/Footer";
 
 const serviceIcons = [Phone, Shield, Globe, Camera, Monitor, KeyRound];
 
@@ -290,24 +291,7 @@ export default async function Home() {
         </AnimatedSection>
       </section>
 
-      {/* ── Footer ──────────────────────────────────────────────── */}
-      <footer className="border-t border-gray-200 py-10 px-6 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400 text-sm">
-          <div>
-            <span className="text-[#CC0000] font-semibold">Network</span>
-            <span className="text-gray-600"> South, Inc.</span>
-            <span className="ml-3">&#169; {new Date().getFullYear()} All rights reserved.</span>
-          </div>
-          <div className="flex gap-6">
-            <span>{address}</span>
-            <a href={`tel:${phone.replace(/\D/g, "")}`} className="hover:text-gray-600 transition-colors">{phone}</a>
-          </div>
-          <div className="flex gap-6">
-            <Link href="/support" className="hover:text-gray-600 transition-colors">Support</Link>
-            <Link href="/payment" className="hover:text-gray-600 transition-colors">Payment</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

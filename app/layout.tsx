@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
+import SmoothScroll from "@/components/SmoothScroll";
+import PageTransition from "@/components/PageTransition";
+import StickyCTA from "@/components/StickyCTA";
 import { SanityLive } from "@/sanity/lib/live";
 
 const inter = Inter({
@@ -13,6 +16,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Network South, Inc. | Business Communications & Security",
   description: "Raleigh-Durham's foremost telecommunications partner. VoIP, managed IT, network infrastructure, video surveillance, and cybersecurity for businesses since 1994.",
+  openGraph: {
+    title: "Network South, Inc. | Business Communications & Security",
+    description: "Raleigh-Durham's foremost telecommunications partner. VoIP, managed IT, network infrastructure, video surveillance, and cybersecurity for businesses since 1994.",
+    url: "https://network-south.com",
+    siteName: "Network South, Inc.",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -23,10 +34,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
-        <ScrollProgress />
-        <Navbar />
-        {children}
-        <SanityLive />
+        <SmoothScroll>
+          <ScrollProgress />
+          <Navbar />
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <StickyCTA />
+          <SanityLive />
+        </SmoothScroll>
       </body>
     </html>
   );
