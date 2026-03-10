@@ -16,7 +16,7 @@ export default function AnimatedSection({
   className = "",
   delay = 0,
   animation = "anim-fade-up",
-  threshold = 0.1,
+  threshold = 0.08,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,16 +24,21 @@ export default function AnimatedSection({
     const el = ref.current;
     if (!el) return;
 
+    // Safety fallback: if element is already in the viewport on mount, animate immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      setTimeout(() => el.classList.add("animate-in", animation), delay);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            el.classList.add("animate-in", animation);
-          }, delay);
+          setTimeout(() => el.classList.add("animate-in", animation), delay);
           observer.unobserve(el);
         }
       },
-      { threshold }
+      { threshold, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
